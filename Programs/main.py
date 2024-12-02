@@ -14,8 +14,8 @@ lSpeed = machine.PWM(machine.Pin(17))
 
 #Left Motor Directions
 
-leftMotorForward = machine.Pin(15, machine.Pin.OUT)
-leftMotorReverse = machine.Pin(16, machine.Pin.OUT)
+leftMotorForward = machine.Pin(14, machine.Pin.OUT)
+leftMotorReverse = machine.Pin(15, machine.Pin.OUT)
 
 
 ## Right Motors
