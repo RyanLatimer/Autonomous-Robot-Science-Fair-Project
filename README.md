@@ -17,11 +17,16 @@ Those resoucres are listed below:
 ## Installation
 
 1. Esnure that you have the latest version of MicroPython for your Raspberry Pi Pico accessible at https://www.raspberrypi.com/documentation/microcontrollers/micropython.html
-2. Download the main.py file located in the [Programs](Programs) Folder and flash it onto the Pico - Add link to locations
+2. Download the main.py file located in the [Programs](Programs) Folder and flash it onto the Pico
 3. Rebuild the circuitry according to the schematics and CAD files loacted in the Design Folder -Add link to loactions
 
 ## Usage
+
 Utilize the program according to the instruction in the USAGE.md file. - Add link to location
+
+## Contribution
+
+Contributions to this project are creatly appreciate howver no pull reuqests to the code, schematics, or CAD will be accepted before the end date of the science fair. Beginning April 1st, contribtion will be accepted and the project further improved. Please make contributions in accordance to the Code of Conduct.
 
 ## Liscense
 This work is liscened under the GNU General Public Liscense GPLv3 - see the [LICENSE](LICENSE) file for details
