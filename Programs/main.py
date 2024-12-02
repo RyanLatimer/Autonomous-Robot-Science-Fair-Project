@@ -40,8 +40,8 @@ lEcho = machine.Pin(6, machine.Pin.IN)
 
 #Define Right Distance Sensor
 
-rTrig = machine.Pin(12, machine.Pin.OUT)
-rEcho = machine.Pin(11, machine.Pin.IN)
+rTrig = machine.Pin(19, machine.Pin.OUT)
+rEcho = machine.Pin(18, machine.Pin.IN)
 
 #Define Forward Distance Algorithm
 
