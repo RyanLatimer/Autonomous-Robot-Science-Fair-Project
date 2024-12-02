@@ -14,8 +14,8 @@ lSpeed = machine.PWM(machine.Pin(17))
 
 #Left Motor Directions
 
-leftMotorForward = machine.Pin(15, Pin.OUT)
-leftMotorReverse = machine.Pin(16, Pin.OUT)
+leftMotorForward = machine.Pin(15, machine.Pin.OUT)
+leftMotorReverse = machine.Pin(16, machine.Pin.OUT)
 
 
 #Right Motors
@@ -26,23 +26,23 @@ rSpeed = machine.PWM(machine.Pin(24))
 
 #Right Motor Directions
 
-rightMotorForward = machine.Pin(26, Pin.OUT)
-rightMotorReverse = machine.Pin(25, Pin.OUT)
+rightMotorForward = machine.Pin(26, machine.Pin.OUT)
+rightMotorReverse = machine.Pin(25, machine.Pin.OUT)
 
 #Define Forward Distance Sensor
 
-fTrig = machine.Pin(2, Pin.OUT)
-fEcho = machine.Pin(1, Pin.IN)
+fTrig = machine.Pin(2, machine.Pin.OUT)
+fEcho = machine.Pin(1, machine.Pin.IN)
 
 #Define Left Distance Sensor
 
-lTrig = machine.Pin(7, Pin.OUT)
-lEcho = machine.Pin(6, Pin.IN)
+lTrig = machine.Pin(7, machine.Pin.OUT)
+lEcho = machine.Pin(6, machine.Pin.IN)
 
 #Define Right Distance Sensor
 
-rTrig = machine.Pin(12, Pin.OUT)
-rEcho = machine.Pin(11, Pin.IN)
+rTrig = machine.Pin(12, machine.Pin.OUT)
+rEcho = machine.Pin(11, machine.Pin.IN)
 
 #Define Forward Distance Algorithm
 
@@ -148,9 +148,9 @@ def rUltra():
     print("Distance to the Left: ", distance, " cm")
 
 #Define the VOID LOOP Algorithim or the Main Loop Code
-
-while True:
-    fUltra()
-    lUltra()
-    rUltra()
-    utime.sleep_us(5)
+if __name__ == "__main__":   
+    while True:
+        fUltra()
+        lUltra()
+        rUltra()
+        utime.sleep_us(5)
