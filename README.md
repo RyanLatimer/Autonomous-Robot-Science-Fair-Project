@@ -17,7 +17,7 @@ Those resoucres are listed below:
 ## Installation
 
 1. Esnure that you have the latest version of MicroPython for your Raspberry Pi Pico accessible at https://www.raspberrypi.com/documentation/microcontrollers/micropython.html
-2. Download the main.py file located in the Programs Folder and flash it onto the Pico - Add link to locations
+2. Download the main.py file located in the [Programs](Programs) Folder and flash it onto the Pico - Add link to locations
 3. Rebuild the circuitry according to the schematics and CAD files loacted in the Design Folder -Add link to loactions
 
 ## Usage
