@@ -8,7 +8,7 @@ import random
 
 #Left Motors
 
-#Left Motor Speed
+## Left Motor Speed
 
 lSpeed = machine.PWM(machine.Pin(17))
 
@@ -18,7 +18,7 @@ leftMotorForward = machine.Pin(15, machine.Pin.OUT)
 leftMotorReverse = machine.Pin(16, machine.Pin.OUT)
 
 
-#Right Motors
+## Right Motors
 
 #Right Motor Speed
 
@@ -27,7 +27,6 @@ rSpeed = machine.PWM(machine.Pin(24))
 #Right Motor Directions
 
 rightMotorForward = machine.Pin(26, machine.Pin.OUT)
-rightMotorReverse = machine.Pin(25, machine.Pin.OUT)
 
 #Define Forward Distance Sensor
 
@@ -146,6 +145,26 @@ def rUltra():
 
     distance = (timepassed * 0.0343) / 2
     print("Distance to the Left: ", distance, " cm")
+
+
+# Define Control Methods
+
+def forward():
+    leftMotorReverse.value(0)
+    leftMotorForward.value(1)
+    rightMotorForward.value(1)
+
+def rotateLeft():
+    leftMotorForward.value(0)
+    leftMotorReverse.value(1)
+    rightMotorForward.value(1)
+    # Wait Time for 90 Degree Rotation. This is currently just filler:
+    utime.sleep(5)
+    leftMotorReverse.value(0)
+    rightMotorForward.value(0)
+
+
+
 
 #Define the VOID LOOP Algorithim or the Main Loop Code
 if __name__ == "__main__":   
