@@ -163,10 +163,17 @@ def rotateLeft():
     leftMotorReverse.value(0)
     rightMotorForward.value(0)
 
+def rotateRight():
+    leftMotorForward.value(0)
+    leftMotorReverse.value(1)
+    rightMotorForward.value(1)
+    # Wait Time for 270 Degreee Rotation is unknown. This is just filler.
+    utime.sleep(15)
+    leftMotorReverse.value(0)
+    rightMotorForward.value(0)
 
 
-
-#Define the VOID LOOP Algorithim or the Main Loop Code
+# Define the VOID LOOP Algorithim or the Main Loop Code
 if __name__ == "__main__":   
     while True:
         fUltra()
