@@ -1,6 +1,7 @@
 import machine
 import utime
 import random
+import os
 
 #Void Setup or Setup Loop
 
@@ -8,25 +9,20 @@ import random
 
 #Left Motors
 
-## Left Motor Speed
-
-lSpeed = machine.PWM(machine.Pin(17))
-
 #Left Motor Directions
 
-leftMotorForward = machine.Pin(14, machine.Pin.OUT)
-leftMotorReverse = machine.Pin(15, machine.Pin.OUT)
+leftMotorForward = PWM(PIN(14))
+leftMotorReverse = PWM(PIN(15))
 
-
+leftMotorForward.freq(1000)
+leftMotorForward.freq(1000)
 ## Right Motors
-
-#Right Motor Speed
-
-rSpeed = machine.PWM(machine.Pin(24))
 
 #Right Motor Directions
 
-rightMotorForward = machine.Pin(26, machine.Pin.OUT)
+rightMotorForward = PWM(PIN(26))
+
+rightMotorForward.freq(1000)
 
 #Define Forward Distance Sensor
 
@@ -71,12 +67,12 @@ def fUltra():
     # Calculate Time Passed
 
     timepassed = signalon - signaloff
-
+    
     # Calculate Distance 
 
     distance = (timepassed * 0.0343) / 2
     print("Distance ahead : ", distance, " cm")
-
+    return distance
 #Define Left Distance Algorithm
 
 def lUltra():
@@ -111,6 +107,7 @@ def lUltra():
 
     distance = (timepassed * 0.0343) / 2
     print("Distance to the Left: ", distance, " cm")
+    return distance
 
 #Define Right Distance Algorithm
 
@@ -145,38 +142,63 @@ def rUltra():
 
     distance = (timepassed * 0.0343) / 2
     print("Distance to the Left: ", distance, " cm")
-
+    return distance
 
 # Define Control Methods
 
+def stop():
+    leftMotorForward.duty(0)
+    leftMotorReverse.duty(0)
+    rightMotorForward.duty(0)
+
 def forward():
-    leftMotorReverse.value(0)
-    leftMotorForward.value(1)
-    rightMotorForward.value(1)
+    leftMotorReverse.duty(0)
+    leftMotorForward.duty(1)
+    rightMotorForward.duty(1)
+
+    utime.sleep(0.1)
 
 def rotateLeft():
-    leftMotorForward.value(0)
-    leftMotorReverse.value(1)
-    rightMotorForward.value(1)
+    leftMotorForward.duty(0)
+    leftMotorReverse.duty(1)
+    rightMotorForward.duty(1)
     # Wait Time for 90 Degree Rotation. This is currently just filler:
     utime.sleep(5)
-    leftMotorReverse.value(0)
-    rightMotorForward.value(0)
+    leftMotorReverse.duty(0)
+    rightMotorForward.duty(0)
 
 def rotateRight():
-    leftMotorForward.value(0)
-    leftMotorReverse.value(1)
-    rightMotorForward.value(1)
+    leftMotorForward.duty(0)
+    leftMotorReverse.duty(1)
+    rightMotorForward.duty(1)
     # Wait Time for 270 Degreee Rotation is unknown. This is just filler.
     utime.sleep(15)
-    leftMotorReverse.value(0)
-    rightMotorForward.value(0)
+    leftMotorReverse.duty(0)
+    rightMotorForward.duty(0)
+
+# Define the detect algorithms
+def detectDistance():
+        fUltra()
+        lUltra()
+        rUltra()
+        utime.sleep_us(5)
+
+        if fUltra > 2:
+            forward()
+        elif fUltra <= 2: # Maybe this should be larger
+            stop()
+            if lUltra > rUltra:
+                rotateLeft()
+            elif rUltra > rUltra:
+                rotateRight()
+            else:
+                print("Error in Comparing R and L Distance Sensors")
+        else:
+            print("Error in comparing forward distance to 2cm")
 
 
 # Define the VOID LOOP Algorithim or the Main Loop Code
 if __name__ == "__main__":   
     while True:
-        fUltra()
-        lUltra()
-        rUltra()
-        utime.sleep_us(5)
+        detectDistance()
+    
