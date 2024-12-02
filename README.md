@@ -26,7 +26,7 @@ Utilize the program according to the instruction in the USAGE.md file. - Add lin
 
 ## Contribution
 
-Contributions to this project are creatly appreciate howver no pull reuqests to the code, schematics, or CAD will be accepted before the end date of the science fair. Beginning April 1st, contribtion will be accepted and the project further improved. Please make contributions in accordance to the Code of Conduct.
+Contributions to this project are creatly appreciate howver no pull reuqests to the code, schematics, or CAD will be accepted before the end date of the science fair. Beginning April 1st, contribtion will be accepted and the project further improved. Please make contributions in accordance to the [Code of Conduct](CodeOfConduct).
 
 ## Liscense
 This work is liscened under the GNU General Public Liscense GPLv3 - see the [LICENSE](LICENSE) file for details
