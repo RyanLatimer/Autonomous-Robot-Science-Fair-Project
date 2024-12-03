@@ -22,9 +22,9 @@ Those resoucres are listed below:
 
 ## Usage
 
-Utilize the program according to the instruction in the USAGE.md file. - Add link to location
+Utilize the program according to the instruction in the [USAGE.md](USAGE.md) file. - Add link to location
 
-## Contribution
+## Contribu
 
 Contributions to this project are creatly appreciate howver no pull reuqests to the code, schematics, or CAD will be accepted before the end date of the science fair. Beginning April 1st, contribtion will be accepted and the project further improved. Please make contributions in accordance to the [Code of Conduct](CodeOfConduct).
 
