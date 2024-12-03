@@ -1,0 +1,22 @@
+# VSCode
+.vscode/
+
+# Arduino IDE
+*.ino.*
+*.arduinocache/
+*.arduino15/
+build/
+libraries/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~       # Backup files
+*.swp    # Swap files
